@@ -1,0 +1,16 @@
+C:\Users\Mateja\source\repos\RestaurantApplication\RAApplication\bin\Debug\netcoreapp2.2\RAApplication.deps.json
+C:\Users\Mateja\source\repos\RestaurantApplication\RAApplication\bin\Debug\netcoreapp2.2\RAApplication.dll
+C:\Users\Mateja\source\repos\RestaurantApplication\RAApplication\bin\Debug\netcoreapp2.2\RAApplication.pdb
+C:\Users\Mateja\source\repos\RestaurantApplication\RAApplication\obj\Debug\netcoreapp2.2\RAApplication.csprojAssemblyReference.cache
+C:\Users\Mateja\source\repos\RestaurantApplication\RAApplication\obj\Debug\netcoreapp2.2\RAApplication.csproj.CoreCompileInputs.cache
+C:\Users\Mateja\source\repos\RestaurantApplication\RAApplication\obj\Debug\netcoreapp2.2\RAApplication.AssemblyInfoInputs.cache
+C:\Users\Mateja\source\repos\RestaurantApplication\RAApplication\obj\Debug\netcoreapp2.2\RAApplication.AssemblyInfo.cs
+C:\Users\Mateja\source\repos\RestaurantApplication\RAApplication\obj\Debug\netcoreapp2.2\RAApplication.dll
+C:\Users\Mateja\source\repos\RestaurantApplication\RAApplication\obj\Debug\netcoreapp2.2\RAApplication.pdb
+C:\Users\Mateja\source\repos\RestaurantApplication\RAApplication\bin\Debug\netcoreapp2.2\DataAccess.dll
+C:\Users\Mateja\source\repos\RestaurantApplication\RAApplication\bin\Debug\netcoreapp2.2\Domain.dll
+C:\Users\Mateja\source\repos\RestaurantApplication\RAApplication\bin\Debug\netcoreapp2.2\DataAccess.pdb
+C:\Users\Mateja\source\repos\RestaurantApplication\RAApplication\bin\Debug\netcoreapp2.2\Domain.pdb
+C:\Users\Mateja\source\repos\RestaurantApplication\RAApplication\obj\Debug\netcoreapp2.2\RAApplication.csproj.CopyComplete
+C:\Users\Mateja\source\repos\RestaurantApplication\RAApplication\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Mateja\source\repos\RestaurantApplication\RAApplication\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Http.Features.xml

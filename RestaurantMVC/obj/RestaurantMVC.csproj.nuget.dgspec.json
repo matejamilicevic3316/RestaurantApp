@@ -1,0 +1,341 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RestaurantMVC\\RestaurantMVC.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\DataAccess\\DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\DataAccess\\DataAccess.csproj",
+        "projectName": "DataAccess",
+        "projectPath": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Mateja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Mateja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\Models\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\Models\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Analyzers": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\Models\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\Models\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\Models\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Mateja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Mateja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RAApplication\\RAApplication.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RAApplication\\RAApplication.csproj",
+        "projectName": "RAApplication",
+        "projectPath": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RAApplication\\RAApplication.csproj",
+        "packagesPath": "C:\\Users\\Mateja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RAApplication\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Mateja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\DataAccess\\DataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RACommands\\RACommands.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RACommands\\RACommands.csproj",
+        "projectName": "RACommands",
+        "projectPath": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RACommands\\RACommands.csproj",
+        "packagesPath": "C:\\Users\\Mateja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RACommands\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Mateja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\DataAccess\\DataAccess.csproj"
+              },
+              "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RAApplication\\RAApplication.csproj": {
+                "projectPath": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RAApplication\\RAApplication.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RestaurantMVC\\RestaurantMVC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RestaurantMVC\\RestaurantMVC.csproj",
+        "projectName": "RestaurantMVC",
+        "projectPath": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RestaurantMVC\\RestaurantMVC.csproj",
+        "packagesPath": "C:\\Users\\Mateja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RestaurantMVC\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Mateja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\DataAccess\\DataAccess.csproj"
+              },
+              "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\Models\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\Models\\Domain.csproj"
+              },
+              "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RAApplication\\RAApplication.csproj": {
+                "projectPath": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RAApplication\\RAApplication.csproj"
+              },
+              "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RACommands\\RACommands.csproj": {
+                "projectPath": "C:\\Users\\Mateja\\source\\repos\\RestaurantApplication\\RACommands\\RACommands.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.CodeDom.Providers.DotNetCompilerPlatform": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

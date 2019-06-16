@@ -1,0 +1,50 @@
+﻿@model RestaurantMVC.Models.CreateArticleModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>ArticleRequest</h4>
+@if (TempData["error"] != null)
+{
+    <p class="text-danger">@TempData["error"]</p>
+}
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="@Model.Article.Name" class="control-label"></label>
+                <input asp-for="@Model.Article.Name" class="form-control" />
+                <span asp-validation-for="@Model.Article.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Article.ArticleTypeId" class="control-label"></label>
+                <select asp-for="@Model.Article.ArticleTypeId" class="form-control">
+                    @foreach (var type in Model.ArticleTypes)
+                    {
+                        <option value="@type.Id">@type.Name</option>
+                    }
+                </select>
+                <span asp-validation-for="@Model.Article.ArticleTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Article.Price" class="control-label"></label>
+                <input asp-for="@Model.Article.Price" class="form-control" />
+                <span asp-validation-for="@Model.Article.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

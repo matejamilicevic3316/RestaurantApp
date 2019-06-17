@@ -31,6 +31,23 @@ namespace RestaurantApi.Controllers
             this.updateTable = updateTable;
         }
         // GET: api/Table
+        /// <summary>
+        /// Gets Tables
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /TableSearch
+        ///     {
+        ///        "IdRestaurantSector":1,
+        ///        "IsFree":true
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="value"></param>
+        /// <returns>Waiters with the same role</returns>
+        /// <response code="201">Returns the WAITER which has same IdRole</response>
+        /// <response code="400">If the IdRole is null</response>    
         [HttpGet]
         public IActionResult Get([FromQuery]TableSearch search)
         {
@@ -45,6 +62,19 @@ namespace RestaurantApi.Controllers
         }
 
         // GET: api/Table/5
+        /// <summary>
+        /// Gets a Table
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /Table/Id
+        ///
+        /// </remarks>
+        /// <param name="id"></param>
+        /// <returns>Table with the same id</returns>
+        /// <response code="201">Returns the Table</response>
+        /// <response code="400">If the Table is null</response>
         [HttpGet("{id}", Name = "GetTable")]
         public IActionResult Get(int id)
         {
@@ -63,6 +93,23 @@ namespace RestaurantApi.Controllers
         }
 
         // POST: api/Table
+        /// <summary>
+        /// Creates a Table.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /TableRequest
+        ///     {
+        ///        "Name": "Tabletralala",
+        ///        "IdSector": "1",
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="value"></param>
+        /// <returns>A newly created Table</returns>
+        /// <response code="201">Returns the newly created WAITER</response>
+        /// <response code="400">If the Table is null</response>    
         [LoggedIn("Manager")]
         [HttpPost]
         public IActionResult Post([FromBody] TableRequest request)
@@ -85,7 +132,24 @@ namespace RestaurantApi.Controllers
                 return StatusCode(500);
             }
         }
-
+        
+        /// <summary>
+        /// Updates a Table.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     PUT /TableRequest
+        ///     {
+        ///        "Name": "Tabletralala",
+        ///        "IdSector": "1",
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="value"></param>
+        /// <returns>No Content</returns>
+        /// <response code="204">Returns No Content</response>
+        /// <response code="400">If the Sector is null</response>
         // PUT: api/Table/5
         [LoggedIn("Manager")]
         [HttpPut("{id}")]
@@ -111,6 +175,10 @@ namespace RestaurantApi.Controllers
         }
 
         // DELETE: api/ApiWithActions/5
+        /// <summary>
+        /// Deletes a specific Table.
+        /// </summary>
+        /// <param name="id"></param>   
         [LoggedIn("Manager")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)

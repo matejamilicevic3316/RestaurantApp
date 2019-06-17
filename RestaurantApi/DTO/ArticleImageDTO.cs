@@ -17,6 +17,5 @@ namespace RestaurantApi.DTO
         [Required(ErrorMessage = "This field is required")]
         public double Price { get; set; }
         public IFormFile Image { get; set; }
-        public string Alt { get; set; }
     }
 }

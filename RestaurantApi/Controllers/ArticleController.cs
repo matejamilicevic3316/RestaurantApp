@@ -36,6 +36,25 @@ namespace RestaurantApi.Controllers
             
         }
         // GET: api/Article
+        /// <summary>
+        /// Gets Articles
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /RoleSearch
+        ///     {
+        ///        "IdArticleType":1,
+        ///        "IdOrder":1,
+        ///        "Keyword":"word",
+        ///        "Perpage":5,
+        ///        "Pagenumber":1
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="value"></param>
+        /// <returns>Roles</returns>
+        /// <response code="201">Roles with the similar or same name</response>
         [HttpGet]
         public IActionResult Get([FromQuery] ArticleSearch search)
         {
@@ -52,7 +71,20 @@ namespace RestaurantApi.Controllers
                 return StatusCode(500);
             }
         }
-
+        
+        /// <summary>
+        /// Gets a Article
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /Article/Id
+        ///
+        /// </remarks>
+        /// <param name="id"></param>
+        /// <returns>Article with the same id</returns>
+        /// <response code="201">Returns the Article</response>
+        /// <response code="400">If the Article is null</response>
         // GET: api/Article/5
         [HttpGet("{id}", Name = "GetArticle")]
         public IActionResult Get(int id)
@@ -72,6 +104,25 @@ namespace RestaurantApi.Controllers
         }
 
         // POST: api/Article
+        /// <summary>
+        /// Creates a Article.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Post /ArticleImageDTO
+        ///     {
+        ///        "Name": "Article35",
+        ///        "ArticleTypeId":1,
+        ///        "Price":120,
+        ///        "Image":Image
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="value"></param>
+        /// <returns>A newly created Article</returns>
+        /// <response code="204">Returns a Article</response>
+        /// <response code="400">If the Article is null</response>
         [LoggedIn]
         [HttpPost]
         public IActionResult Post([FromForm] ArticleImageDTO p)
@@ -124,6 +175,24 @@ namespace RestaurantApi.Controllers
         }
 
         // PUT: api/Article/5
+        /// <summary>
+        /// Updates a Article.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///      PUT /ArticleRequest
+        ///     {
+        ///        "Name": "Article35",
+        ///        "ArticleTypeId":1,
+        ///        "Price":120
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="value"></param>
+        /// <returns>No Content</returns>
+        /// <response code="204">Returns No Content</response>
+        /// <response code="400">If the Name is already used</response>
         [LoggedIn]
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] ArticleRequest value)
@@ -148,6 +217,10 @@ namespace RestaurantApi.Controllers
         }
 
         // DELETE: api/ApiWithActions/5
+        /// <summary>
+        /// Deletes a specific Article.
+        /// </summary>
+        /// <param name="id"></param>   
         [LoggedIn("Manager")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)

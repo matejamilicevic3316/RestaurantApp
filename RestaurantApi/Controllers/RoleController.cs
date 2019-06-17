@@ -34,8 +34,24 @@ namespace RestaurantApi.Controllers
             this.user = user;
         }
         // GET: api/Role
-        
+        /// <summary>
+        /// Gets Role
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /RoleSearch
+        ///     {
+        ///        "Name":"RoleName"
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="value"></param>
+        /// <returns>Roles</returns>
+        /// <response code="201">Roles with the similar or same name</response>
+      
         [HttpGet]
+        
         public IActionResult Get([FromQuery] RoleSearch search)
         {
             try
@@ -49,6 +65,19 @@ namespace RestaurantApi.Controllers
         }
 
         // GET: api/Role/5
+        /// <summary>
+        /// Gets a Role
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /Role/Id
+        ///
+        /// </remarks>
+        /// <param name="id"></param>
+        /// <returns>Role with the same id</returns>
+        /// <response code="201">Returns the Role</response>
+        /// <response code="400">If the Role is null</response>
         [HttpGet("{id}", Name = "Get")]
         public IActionResult Get(int id)
         {
@@ -67,6 +96,23 @@ namespace RestaurantApi.Controllers
         }
 
         // POST: api/Role
+        /// <summary>
+        /// Creates a Role.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     PUT /RoleRequest
+        ///     {
+        ///        "Name": "Roletralala"
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="value"></param>
+        /// <returns>A newly created role</returns>
+        /// <response code="204">Returns a Role</response>
+        /// <response code="400">If the Role is null</response>
+        [LoggedIn("Manager")]
         [HttpPost]
         public IActionResult Post([FromBody] RoleDTO role)
         {
@@ -82,6 +128,23 @@ namespace RestaurantApi.Controllers
         }
 
         // PUT: api/Role/5
+        /// <summary>
+        /// Updates a Role.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     PUT /TableRequest
+        ///     {
+        ///        "Name": "Tabletralala"
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="value"></param>
+        /// <returns>No Content</returns>
+        /// <response code="204">Returns No Content</response>
+        /// <response code="400">If the Name is already used</response>
+        [LoggedIn("Manager")]
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] RoleDTO value)
         {
@@ -105,6 +168,11 @@ namespace RestaurantApi.Controllers
         }
 
         // DELETE: api/ApiWithActions/5
+        /// <summary>
+        /// Deletes a specific Role for Waiter.
+        /// </summary>
+        /// <param name="id"></param>   
+        [LoggedIn("Manager")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

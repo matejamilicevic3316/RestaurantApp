@@ -27,7 +27,8 @@ namespace RACommands.WaiterCommands
                     FirstName = waiter.FirstName,
                     LastName = waiter.LastName,
                     Role = waiter.Role.Name,
-                    Email = waiter.Email
+                    Email = waiter.Email,
+                    Password = waiter.Password
                 };
             }
             else

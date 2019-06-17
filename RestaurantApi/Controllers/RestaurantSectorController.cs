@@ -8,6 +8,7 @@ using RAApplication.DTO;
 using RAApplication.Exceptions;
 using RAApplication.ICommands;
 using RAApplication.Searches;
+using RestaurantApi.Helpers;
 
 namespace RestaurantApi.Controllers
 {
@@ -29,6 +30,22 @@ namespace RestaurantApi.Controllers
             this.updateRestaurantSector = updateRestaurantSector;
         }
         // GET: api/RestaurantSector
+       
+        /// <summary>
+        /// Gets RestaurantSectors
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /RestaurantSectorSearch
+        ///     {
+        ///        "Name":"Ime"
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="value"></param>
+        /// <returns>RestaurantSectors</returns>
+        /// <response code="201">RestaurantSectors with the similar or same name</response>
         [HttpGet]
         public IActionResult Get([FromQuery] RestaurantSectorSearch search)
         {
@@ -43,6 +60,19 @@ namespace RestaurantApi.Controllers
         }
 
         // GET: api/RestaurantSector/5
+        /// <summary>
+        /// Gets a RestaurantSector
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /RestaurantSector/Id
+        ///
+        /// </remarks>
+        /// <param name="id"></param>
+        /// <returns>RestaurantSector with the same id</returns>
+        /// <response code="201">Returns the RestaurantSector</response>
+        /// <response code="400">If the RestaurantSector is null</response>
         [HttpGet("{id}", Name = "GetRS")]
         public IActionResult Get(int id)
         {
@@ -59,8 +89,25 @@ namespace RestaurantApi.Controllers
                 return StatusCode(500);
             }
         }
-
+        
+        /// <summary>
+        /// Creates a RestaurantSector.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Post /RestaurantSector
+        ///     {
+        ///        "Name": "Roletralala"
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="value"></param>
+        /// <returns>A newly created RestaurantSector</returns>
+        /// <response code="204">Returns a RestaurantSector</response>
+        /// <response code="400">If the RestaurantSector is null</response>
         // POST: api/RestaurantSector
+        [LoggedIn("Manager")]
         [HttpPost]
         public IActionResult Post([FromBody] RestaurantSectorDTO value)
         {
@@ -80,6 +127,24 @@ namespace RestaurantApi.Controllers
         }
 
         // PUT: api/RestaurantSector/5
+        // PUT: api/RestaurantSector/5
+        /// <summary>
+        /// Updates a RestaurantSector.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     PUT /RestaurantSectorRequest
+        ///     {
+        ///        "Name": "SectorRandom"
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="value"></param>
+        /// <returns>No Content</returns>
+        /// <response code="204">Returns No Content</response>
+        /// <response code="400">If the Name is already used</response>
+        [LoggedIn("Manager")]
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] RestaurantSectorDTO value)
         {
@@ -103,6 +168,11 @@ namespace RestaurantApi.Controllers
         }
 
         // DELETE: api/ApiWithActions/5
+        /// <summary>
+        /// Deletes a specific Restaurant Sector.
+        /// </summary>
+        /// <param name="id"></param>   
+        [LoggedIn("Manager")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

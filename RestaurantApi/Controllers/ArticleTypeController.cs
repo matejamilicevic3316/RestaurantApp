@@ -8,6 +8,7 @@ using RAApplication.DTO;
 using RAApplication.Exceptions;
 using RAApplication.ICommands.ICommandsArticleType;
 using RAApplication.Searches;
+using RestaurantApi.Helpers;
 
 namespace RestaurantApi.Controllers
 {
@@ -30,6 +31,21 @@ namespace RestaurantApi.Controllers
             this.deleteArticleType = deleteArticleType;
         }
         // GET: api/ArticleType
+        /// <summary>
+        /// Gets ArticleTypes
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /ArticleTypeSearch
+        ///     {
+        ///        "Name":"Type"
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="value"></param>
+        /// <returns>ArticleTypes</returns>
+        /// <response code="201">ArticleTypes with the similar or same name</response>
         [HttpGet]
         public IActionResult Get([FromQuery] ArticleTypeSearch search)
         {
@@ -44,6 +60,19 @@ namespace RestaurantApi.Controllers
         }
 
         // GET: api/ArticleType/5
+        /// <summary>
+        /// Gets a ArticleType
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /ArticleType/Id
+        ///
+        /// </remarks>
+        /// <param name="id"></param>
+        /// <returns>ArticleType with the same id</returns>
+        /// <response code="201">Returns the ArticleType</response>
+        /// <response code="400">If the ArticleType is null</response>
         [HttpGet("{id}", Name = "GetAT")]
         public IActionResult Get(int id)
         {
@@ -62,6 +91,23 @@ namespace RestaurantApi.Controllers
         }
 
         // POST: api/ArticleType
+        /// <summary>
+        /// Creates a ArticleType.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Post /ArticleTypeDTO
+        ///     {
+        ///        "Name": "Ime tralala"
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="value"></param>
+        /// <returns>A newly created ArticleType</returns>
+        /// <response code="204">Returns a ArticleType</response>
+        /// <response code="400">If the ArticleType is null</response>
+        [LoggedIn("Manager")]
         [HttpPost]
         public IActionResult Post([FromBody] ArticleTypeDTO value)
         {
@@ -81,6 +127,23 @@ namespace RestaurantApi.Controllers
         }
 
         // PUT: api/ArticleType/5
+        /// <summary>
+        /// Updates a ArticleType.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     PUT /ArticleTypeDTO
+        ///     {
+        ///        "Name": "Name"
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="value"></param>
+        /// <returns>No Content</returns>
+        /// <response code="204">Returns No Content</response>
+        /// <response code="400">If the Name is already used</response>
+        [LoggedIn("Manager")]
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] ArticleTypeDTO value)
         {
@@ -104,6 +167,11 @@ namespace RestaurantApi.Controllers
         }
 
         // DELETE: api/ApiWithActions/5
+        /// <summary>
+        /// Deletes a specific Article Type.
+        /// </summary>
+        /// <param name="id"></param>   
+        [LoggedIn("Manager")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

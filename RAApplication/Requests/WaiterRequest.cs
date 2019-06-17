@@ -19,5 +19,7 @@ namespace RAApplication.Requests
         [Required(ErrorMessage = "This field is required")]
         [MaxLength(70, ErrorMessage = "Name Too Long")]
         public string Email { get; set; }
+        [Required(ErrorMessage = "This field is required")]
+        public string Password { get; set; }
     }
 }

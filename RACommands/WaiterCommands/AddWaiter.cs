@@ -31,7 +31,8 @@ namespace RACommands.WaiterCommands
                     FirstName = req.FirstName,
                     LastName = req.LastName,
                     IdRole = req.IdRole,
-                    Email = req.Email
+                    Email = req.Email,
+                    Password = req.Password
                 };
                 this.context.Waiters.Add(waiter);
                 this.context.SaveChanges();

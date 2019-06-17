@@ -19,7 +19,7 @@ namespace RACommands.WaiterCommands
 
         public IEnumerable<WaiterDTO> Execute(WaiterSearch req)
         {
-            var waiter = this.context.Waiters.AsQueryable().Include(p => p.Role);
+            var waiter = this.context.Waiters.AsQueryable().Include(p => p.Role).Where(p=>p.IsDelete==false);
 
             if (req.IdRole != null)
             {
@@ -31,7 +31,8 @@ namespace RACommands.WaiterCommands
                         FirstName = p.FirstName,
                         LastName = p.LastName,
                         Role = p.Role.Name,
-                        Email = p.Email
+                        Email = p.Email,
+                        Password = p.Password
                     });
                 }
                 else

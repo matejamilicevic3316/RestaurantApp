@@ -1,0 +1,590 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RestaurantApi</name>
+    </assembly>
+    <members>
+        <member name="M:RestaurantApi.Controllers.ArticleController.Get(RAApplication.Searches.ArticleSearch)">
+             <summary>
+             Gets Articles
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /RoleSearch
+                 {
+                    "IdArticleType":1,
+                    "IdOrder":1,
+                    "Keyword":"word",
+                    "Perpage":5,
+                    "Pagenumber":1
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>Roles</returns>
+             <response code="201">Roles with the similar or same name</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.ArticleController.Get(System.Int32)">
+             <summary>
+             Gets a Article
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /Article/Id
+            
+             </remarks>
+             <param name="id"></param>
+             <returns>Article with the same id</returns>
+             <response code="201">Returns the Article</response>
+             <response code="400">If the Article is null</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.ArticleController.Post(RestaurantApi.DTO.ArticleImageDTO)">
+             <summary>
+             Creates a Article.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 Post /ArticleImageDTO
+                 {
+                    "Name": "Article35",
+                    "ArticleTypeId":1,
+                    "Price":120,
+                    "Image":Image
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>A newly created Article</returns>
+             <response code="204">Returns a Article</response>
+             <response code="400">If the Article is null</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.ArticleController.Put(System.Int32,RAApplication.Requests.ArticleRequest)">
+             <summary>
+             Updates a Article.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                  PUT /ArticleRequest
+                 {
+                    "Name": "Article35",
+                    "ArticleTypeId":1,
+                    "Price":120
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>No Content</returns>
+             <response code="204">Returns No Content</response>
+             <response code="400">If the Name is already used</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.ArticleController.Delete(System.Int32)">
+            <summary>
+            Deletes a specific Article.
+            </summary>
+            <param name="id"></param>   
+        </member>
+        <member name="M:RestaurantApi.Controllers.ArticleTypeController.Get(RAApplication.Searches.ArticleTypeSearch)">
+             <summary>
+             Gets ArticleTypes
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /ArticleTypeSearch
+                 {
+                    "Name":"Type"
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>ArticleTypes</returns>
+             <response code="201">ArticleTypes with the similar or same name</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.ArticleTypeController.Get(System.Int32)">
+             <summary>
+             Gets a ArticleType
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /ArticleType/Id
+            
+             </remarks>
+             <param name="id"></param>
+             <returns>ArticleType with the same id</returns>
+             <response code="201">Returns the ArticleType</response>
+             <response code="400">If the ArticleType is null</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.ArticleTypeController.Post(RAApplication.DTO.ArticleTypeDTO)">
+             <summary>
+             Creates a ArticleType.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 Post /ArticleTypeDTO
+                 {
+                    "Name": "Ime tralala"
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>A newly created ArticleType</returns>
+             <response code="204">Returns a ArticleType</response>
+             <response code="400">If the ArticleType is null</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.ArticleTypeController.Put(System.Int32,RAApplication.DTO.ArticleTypeDTO)">
+             <summary>
+             Updates a ArticleType.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /ArticleTypeDTO
+                 {
+                    "Name": "Name"
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>No Content</returns>
+             <response code="204">Returns No Content</response>
+             <response code="400">If the Name is already used</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.ArticleTypeController.Delete(System.Int32)">
+            <summary>
+            Deletes a specific Article Type.
+            </summary>
+            <param name="id"></param>   
+        </member>
+        <member name="M:RestaurantApi.Controllers.OrderController.Get(RAApplication.Searches.OrderSearch)">
+             <summary>
+             Gets Orders
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /OrderSearch
+                 {
+                    "DateFrom":date,
+                    "DateTo":date,
+                    "IdWaiter":1,
+                    "IdTable":1,
+                    "Status":"active"
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>Waiters with the same role</returns>
+             <response code="201">Returns the WAITER which has same IdRole</response>
+             <response code="400">If the IdRole is null</response>    
+        </member>
+        <member name="M:RestaurantApi.Controllers.OrderController.Get(System.Int32)">
+             <summary>
+             Gets a Order
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /Order/Id
+            
+             </remarks>
+             <param name="id"></param>
+             <returns>Order with the same id</returns>
+             <response code="201">Returns the Order</response>
+             <response code="400">If the Order is null</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.OrderController.Post(RAApplication.Requests.OrderRequest)">
+             <summary>
+             Creates Order or updates a OrderArticle of the current Order.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /OrderRequest
+                 {
+                    "IdArticle": 1,
+                    "IdTable": 1,
+                    "IdWaiter": 1
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>No content</returns>
+             <response code="201">Returns NoContent</response>
+             <response code="400">If the Table,Waiter or Article is null</response>    
+        </member>
+        <member name="M:RestaurantApi.Controllers.OrderController.Put(System.Int32,RAApplication.Requests.TableChangeRequest)">
+             <summary>
+             Changes a table of order.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /StatusRequest
+                 {
+                    "status":"paid"
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>No Content</returns>
+             <response code="204">Returns No Content</response>
+             <response code="400">if the Table doesnt exist</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.OrderController.Status(System.Int32,RAApplication.Requests.StatusRequest)">
+             <summary>
+             Updates a Order, changes order status.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /StatusRequest
+                 {
+                    "status":"paid"
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>No Content</returns>
+             <response code="204">Returns No Content</response>
+             <response code="400">if the status is not paid or storned</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.OrderController.Decrease(System.Int32,RAApplication.Requests.ArticleDecreaseRequest)">
+             <summary>
+             Updates a OrderArticle.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /ArticleDecreaseRequest
+                 {
+                    "IdArticle": 1,
+                    "DeleteAll":[0,1]
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>No Content</returns>
+             <response code="204">Returns No Content</response>
+             <response code="400">If the Article doesnt exist, or if DeleteAll is not 0 or 1</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.OrderController.Delete(System.Int32)">
+            <summary>
+            Deletes a specific Order.
+            </summary>
+            <param name="id"></param>   
+        </member>
+        <member name="M:RestaurantApi.Controllers.RestaurantSectorController.Get(RAApplication.Searches.RestaurantSectorSearch)">
+             <summary>
+             Gets RestaurantSectors
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /RestaurantSectorSearch
+                 {
+                    "Name":"Ime"
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>RestaurantSectors</returns>
+             <response code="201">RestaurantSectors with the similar or same name</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.RestaurantSectorController.Get(System.Int32)">
+             <summary>
+             Gets a RestaurantSector
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /RestaurantSector/Id
+            
+             </remarks>
+             <param name="id"></param>
+             <returns>RestaurantSector with the same id</returns>
+             <response code="201">Returns the RestaurantSector</response>
+             <response code="400">If the RestaurantSector is null</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.RestaurantSectorController.Post(RAApplication.DTO.RestaurantSectorDTO)">
+             <summary>
+             Creates a RestaurantSector.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 Post /RestaurantSector
+                 {
+                    "Name": "Roletralala"
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>A newly created RestaurantSector</returns>
+             <response code="204">Returns a RestaurantSector</response>
+             <response code="400">If the RestaurantSector is null</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.RestaurantSectorController.Put(System.Int32,RAApplication.DTO.RestaurantSectorDTO)">
+             <summary>
+             Updates a RestaurantSector.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /RestaurantSectorRequest
+                 {
+                    "Name": "SectorRandom"
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>No Content</returns>
+             <response code="204">Returns No Content</response>
+             <response code="400">If the Name is already used</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.RestaurantSectorController.Delete(System.Int32)">
+            <summary>
+            Deletes a specific Restaurant Sector.
+            </summary>
+            <param name="id"></param>   
+        </member>
+        <member name="M:RestaurantApi.Controllers.RoleController.Get(RAApplication.Searches.RoleSearch)">
+             <summary>
+             Gets Role
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /RoleSearch
+                 {
+                    "Name":"RoleName"
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>Roles</returns>
+             <response code="201">Roles with the similar or same name</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.RoleController.Get(System.Int32)">
+             <summary>
+             Gets a Role
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /Role/Id
+            
+             </remarks>
+             <param name="id"></param>
+             <returns>Role with the same id</returns>
+             <response code="201">Returns the Role</response>
+             <response code="400">If the Role is null</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.RoleController.Post(RAApplication.DTO.RoleDTO)">
+             <summary>
+             Creates a Role.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /RoleRequest
+                 {
+                    "Name": "Roletralala"
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>A newly created role</returns>
+             <response code="204">Returns a Role</response>
+             <response code="400">If the Role is null</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.RoleController.Put(System.Int32,RAApplication.DTO.RoleDTO)">
+             <summary>
+             Updates a Role.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /TableRequest
+                 {
+                    "Name": "Tabletralala"
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>No Content</returns>
+             <response code="204">Returns No Content</response>
+             <response code="400">If the Name is already used</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.RoleController.Delete(System.Int32)">
+            <summary>
+            Deletes a specific Role for Waiter.
+            </summary>
+            <param name="id"></param>   
+        </member>
+        <member name="M:RestaurantApi.Controllers.TableController.Get(RAApplication.Searches.TableSearch)">
+             <summary>
+             Gets Tables
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /TableSearch
+                 {
+                    "IdRestaurantSector":1,
+                    "IsFree":true
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>Waiters with the same role</returns>
+             <response code="201">Returns the WAITER which has same IdRole</response>
+             <response code="400">If the IdRole is null</response>    
+        </member>
+        <member name="M:RestaurantApi.Controllers.TableController.Get(System.Int32)">
+             <summary>
+             Gets a Table
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /Table/Id
+            
+             </remarks>
+             <param name="id"></param>
+             <returns>Table with the same id</returns>
+             <response code="201">Returns the Table</response>
+             <response code="400">If the Table is null</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.TableController.Post(RAApplication.Requests.TableRequest)">
+             <summary>
+             Creates a Table.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /TableRequest
+                 {
+                    "Name": "Tabletralala",
+                    "IdSector": "1",
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>A newly created Table</returns>
+             <response code="201">Returns the newly created WAITER</response>
+             <response code="400">If the Table is null</response>    
+        </member>
+        <member name="M:RestaurantApi.Controllers.TableController.Put(System.Int32,RAApplication.Requests.TableRequest)">
+             <summary>
+             Updates a Table.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /TableRequest
+                 {
+                    "Name": "Tabletralala",
+                    "IdSector": "1",
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>No Content</returns>
+             <response code="204">Returns No Content</response>
+             <response code="400">If the Sector is null</response>
+        </member>
+        <member name="M:RestaurantApi.Controllers.TableController.Delete(System.Int32)">
+            <summary>
+            Deletes a specific Table.
+            </summary>
+            <param name="id"></param>   
+        </member>
+        <member name="M:RestaurantApi.Controllers.WaiterController.Get(RAApplication.Searches.WaiterSearch)">
+             <summary>
+             Gets Waiters
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /WaiterSearch
+                 {
+                    "IdRole":1
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>Waiters with the same role</returns>
+             <response code="201">Returns the WAITER which has same IdRole</response>
+             <response code="400">If the IdRole is null</response>    
+        </member>
+        <member name="M:RestaurantApi.Controllers.WaiterController.Get(System.Int32)">
+             <summary>
+             Gets a Waiter
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /Waiter/Id
+            
+             </remarks>
+             <param name="id"></param>
+             <returns>Waiters with the id</returns>
+             <response code="201">Returns the Waiter</response>
+             <response code="400">If the Waiter is null</response>    
+        </member>
+        <member name="M:RestaurantApi.Controllers.WaiterController.Post(RAApplication.Requests.WaiterRequest)">
+             <summary>
+             Creates a Waiter.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /WaiterRequest
+                 {
+                    "FirstnName": "Ime",
+                    "LastName": "Prezime",
+                    "IdRole": 1,
+                    "Email":"email123@gmail.com
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>A newly created Waiter</returns>
+             <response code="201">Returns the newly created WAITER</response>
+             <response code="400">If the Waiter is null</response>    
+        </member>
+        <member name="M:RestaurantApi.Controllers.WaiterController.Put(System.Int32,RAApplication.Requests.WaiterRequest)">
+             <summary>
+             Creates a Waiter.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /WaiterRequest
+                 {
+                    "FirstnName": "Ime",
+                    "LastName": "Prezime",
+                    "IdRole": 1,
+                    "Email":"email123@gmail.com
+                 }
+            
+             </remarks>
+             <param name="value"></param>
+             <returns>A newly created No Content</returns>
+             <response code="204">Returns No Content</response>
+             <response code="400">If the Waiter is null</response>    
+        </member>
+        <member name="M:RestaurantApi.Controllers.WaiterController.Delete(System.Int32)">
+            <summary>
+            Deletes a specific Waiter.
+            </summary>
+            <param name="id"></param>   
+        </member>
+    </members>
+</doc>

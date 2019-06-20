@@ -51,12 +51,12 @@ namespace RestaurantMVC.Controllers
             catch (ObjectDoesntExistException e)
             {
                 TempData["error"] = e.Message;
-                return View(nameof(Index));
+                return RedirectToAction(nameof(Index));
             }
             catch (Exception)
             {
                 TempData["error"] = "Server error";
-                return View(nameof(Index));
+                return RedirectToAction(nameof(Index));
             }
         }
 
@@ -70,12 +70,12 @@ namespace RestaurantMVC.Controllers
             catch (NotFoundObjectException e)
             {
                 TempData["Error"] = e.Message;
-                return View(nameof(Index));
+                return RedirectToAction(nameof(Index));
             }
             catch (Exception e)
             {
                 TempData["Error"] = "Server error";
-                return View(nameof(Index));
+                return RedirectToAction(nameof(Index));
             }
         }
 
@@ -232,12 +232,12 @@ namespace RestaurantMVC.Controllers
             catch (ObjectDoesntExistException e)
             {
                 TempData["Error"] = e.Message;
-                return View(nameof(Index));
+                return RedirectToAction(nameof(Index));
             }
             catch (Exception e)
             {
                 TempData["Error"] = "Server error";
-                return View(nameof(Index));
+                return RedirectToAction(nameof(Index));
             }
         }
     }

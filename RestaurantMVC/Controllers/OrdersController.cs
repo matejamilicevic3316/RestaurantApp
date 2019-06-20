@@ -152,12 +152,12 @@ namespace RestaurantMVC.Controllers
                 catch (NotFoundObjectException e)
                 {
                     TempData["Error"] = e.Message;
-                    return View(nameof(Index));
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (Exception e)
                 {
                     TempData["Error"] = "Server error";
-                    return View(nameof(Index));
+                    return RedirectToAction(nameof(Index));
                 }
             }
             if (orderUpdate.ArticleDecreaseRequest != null)
@@ -170,12 +170,12 @@ namespace RestaurantMVC.Controllers
                 catch (ObjectDoesntExistException e)
                 {
                     TempData["Error"] = e.Message;
-                    return View(nameof(Index));
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (Exception e)
                 {
                     TempData["Error"] = "Server error";
-                    return View(nameof(Index));
+                    return RedirectToAction(nameof(Index));
                 }
             }
             if (orderUpdate.OrderRequest != null)
@@ -189,12 +189,12 @@ namespace RestaurantMVC.Controllers
                 catch (NotFoundObjectException e)
                 {
                     TempData["Error"] = e.Message;
-                    return View(nameof(Index));
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (Exception e)
                 {
                     TempData["Error"] = "Server error";
-                    return View(nameof(Index));
+                    return RedirectToAction(nameof(Index));
                 }
             }
             if (orderUpdate.Status != null)
@@ -207,10 +207,10 @@ namespace RestaurantMVC.Controllers
                 catch (Exception e)
                 {
                     TempData["Error"] = "Server error";
-                    return View(nameof(Index));
+                    return RedirectToAction(nameof(Index));
                 }
             }
-            return View(nameof(Edit));
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Orders/Delete/5

@@ -127,6 +127,10 @@ namespace RestaurantApi.Controllers
             {
                 return UnprocessableEntity(e.Message);
             }
+            catch(ObjectAlreadyExistsException e)
+            {
+                return UnprocessableEntity(e.Message);
+            }
             catch(Exception e)
             {
                 return StatusCode(500);

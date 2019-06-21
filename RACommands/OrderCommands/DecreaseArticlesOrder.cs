@@ -20,37 +20,44 @@ namespace RACommands.OrderCommands
         public void Execute(ArticleDecreaseRequest req, int IdOrder)
         {
             var IdArticle = req.IdArticle;
-            var articleOrder = this.context.OrderArticles.AsQueryable()
-                .Where(p => p.IdArticle == IdArticle)
-                .Where(p => p.IdOrder == IdOrder).FirstOrDefault();
-            if (req.DeleteAll == 1)
+            if (this.context.Orders.Find(IdOrder).Active == true)
             {
-                this.context.OrderArticles.Remove(articleOrder);
-                this.context.SaveChanges();
-                if (!this.context.OrderArticles.Any(p => p.IdOrder == articleOrder.IdOrder))
+                var articleOrder = this.context.OrderArticles.AsQueryable()
+                    .Where(p => p.IdArticle == IdArticle)
+                    .Where(p => p.IdOrder == IdOrder).FirstOrDefault();
+                if (req.DeleteAll == 1)
                 {
-                    this.deleteOrder.Execute(articleOrder.IdOrder);
-                }
-            }
-            else
-            {
-                if (req.DeleteAll == 0)
-                {
-                    articleOrder.ArticlesNumber = articleOrder.ArticlesNumber - 1;
-                    if (articleOrder.ArticlesNumber == 0)
+                    this.context.OrderArticles.Remove(articleOrder);
+                    this.context.SaveChanges();
+                    if (!this.context.OrderArticles.Any(p => p.IdOrder == articleOrder.IdOrder))
                     {
-                        this.context.OrderArticles.Remove(articleOrder);
-                        this.context.SaveChanges();
-                        if (!this.context.OrderArticles.Any(p => p.IdOrder == articleOrder.IdOrder))
-                        {
-                            this.deleteOrder.Execute(articleOrder.IdOrder);
-                        }
+                        this.deleteOrder.Execute(articleOrder.IdOrder);
                     }
                 }
                 else
                 {
-                    throw new ObjectDoesntExistException("Number");
+                    if (req.DeleteAll == 0)
+                    {
+                        articleOrder.ArticlesNumber = articleOrder.ArticlesNumber - 1;
+                        if (articleOrder.ArticlesNumber == 0)
+                        {
+                            this.context.OrderArticles.Remove(articleOrder);
+                            this.context.SaveChanges();
+                            if (!this.context.OrderArticles.Any(p => p.IdOrder == articleOrder.IdOrder))
+                            {
+                                this.deleteOrder.Execute(articleOrder.IdOrder);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        throw new ObjectDoesntExistException("Number");
+                    }
                 }
+            }
+            else
+            {
+                throw new ObjectDoesntExistException("Order");
             }
             this.context.SaveChanges();
         }

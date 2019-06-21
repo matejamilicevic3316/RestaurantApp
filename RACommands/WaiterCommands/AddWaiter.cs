@@ -26,21 +26,28 @@ namespace RACommands.WaiterCommands
         {
             if (context.Roles.Any(p => p.Id == req.IdRole))
             {
-                var waiter = new Waiter
+                if (context.Waiters.Any(p => p.Email == req.Email))
                 {
-                    FirstName = req.FirstName,
-                    LastName = req.LastName,
-                    IdRole = req.IdRole,
-                    Email = req.Email,
-                    Password = req.Password
-                };
-                this.context.Waiters.Add(waiter);
-                this.context.SaveChanges();
-                emailSender.Subject = "Job";
-                emailSender.Subject = req.FirstName + " " + req.LastName + ", you got a job!";
-                emailSender.ToEmail = req.Email;
-                emailSender.Send();
-                return getWaiter.Execute(waiter.Id);
+                    throw new ObjectAlreadyExistsException("Email");
+                }
+                else
+                {
+                    var waiter = new Waiter
+                    {
+                        FirstName = req.FirstName,
+                        LastName = req.LastName,
+                        IdRole = req.IdRole,
+                        Email = req.Email,
+                        Password = req.Password
+                    };
+                    this.context.Waiters.Add(waiter);
+                    this.context.SaveChanges();
+                    emailSender.Subject = "Job";
+                    emailSender.Subject = req.FirstName + " " + req.LastName + ", you got a job!";
+                    emailSender.ToEmail = req.Email;
+                    emailSender.Send();
+                    return getWaiter.Execute(waiter.Id);
+                }
             }
             else
             {
